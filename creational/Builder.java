@@ -29,7 +29,7 @@ class CarBuilder implements Car {
   
   @Override
   Car setSeater(int seats) {
-    this.seats = seat;
+    this.seats = seats;
     return this;
   }
   
