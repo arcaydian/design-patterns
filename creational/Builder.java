@@ -1,12 +1,12 @@
 class BuilderPattern {
   public static void main(String[] args) {
-    Car car = new CarBuilder().setType("Sedan").setSeater(5).build();
+    Car car = new CarBuilder().setType("Sedan").build();
   }
 }
 
 interface Car {
-  String setType();
-  int setSeater();
+  Car setType();
+  Car setSeater();
 }
 
 class CarBuilder implements Car {
@@ -16,13 +16,21 @@ class CarBuilder implements Car {
   Car car = new CarBuilder();
   
   @Override
-  String setType(String type) {
+  Car setType(String type) {
+    if(type.equals("Sedan")) {
+      this.setSeater(5);
+    }
+    else {
+      this.setSeater(7);
+    }
     this.type = type;
+    return this;
   }
   
   @Override
-  int setSeater(int seats) {
+  Car setSeater(int seats) {
     this.seats = seat;
+    return this;
   }
   
   Car build() {
