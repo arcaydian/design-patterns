@@ -1,4 +1,4 @@
-# Types of creation design patterns
+# Types of creational design patterns
 - Builder
 - Factory
 - Singleton
